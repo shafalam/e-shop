@@ -5,3 +5,4 @@ Technologies used: Spring Boot, Angular, Hibernate, H2.
 
 Screenshots:
 
+![Home](screenshots/home.PNG)
