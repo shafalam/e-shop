@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Iterator;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CustomerController {
       private CustomerCrudService customerCrudService;
       private ProductCrudService productCrudService;

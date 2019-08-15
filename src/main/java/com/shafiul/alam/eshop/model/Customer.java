@@ -17,7 +17,7 @@ public class Customer {
     private String paymentMethod;
     private Integer balance;
     private String password;
-    private ArrayList<Product> buyingHistory;
+    private ArrayList<Product> buyingHistory = new ArrayList<Product>();
 
     public Customer(){
         this.buyingHistory = new ArrayList<Product>();
