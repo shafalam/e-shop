@@ -5,16 +5,21 @@ Technologies used: Spring Boot, Angular, Hibernate, H2.
 
 Screenshots:
 Home:
+
 ![Home](screenshots/home.PNG)
 
 Login:
+
 ![Home-Login](screenshots/home-login.PNG)
 
 Sign-up:
+
 ![Sign-Up form](screenshots/signup.PNG)
 
 Products List:
+
 ![Products](screenshots/products.PNG)
 
-Customer Home:
-![Customer home buying history](screenshots/customer-home-buying-history.PNG)
+Customer Home
+
+![Customer home buying history](screenshots/home-customer-buying-history.PNG)
