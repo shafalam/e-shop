@@ -17,8 +17,10 @@ public class CustomerService {
     }
 
     public void buyProduct(Product product){
+        System.out.println("Customer service: product: " + product.getId());
+        System.out.println("Customer service: customer: " + this.customer.getId());
+
         customer.addBuyingHistory(product);
         customer.setBalance(customer.getBalance() - product.getPrice());
-
     }
 }
