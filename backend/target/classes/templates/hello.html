@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+    <h1 th:text="#{home.welcome}">Welcome</h1>
+    <h1 align="center" th:text="'Hello ' + ${name}">Hello World</h1>
+
+    <div align="left">
+        <p>New Here?</p>
+        <a href="/new">Register here</a>
+    </div>
+</body>
+</html>
