@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.shafiul.alam.eshop.EShopApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 216.615 s - in com.shafiul.alam.eshop.EShopApplicationTests
