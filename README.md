@@ -10,8 +10,8 @@ Technologies used: Spring Boot, Angular, Hibernate, H2.
 ## To run follow the steps:
 
 ### for back-end
-- cd e-shop
-- mvn sprint-boot:run
+- cd backend
+- mvn spring-boot:run
 
 ### for front-end
 - cd angularfrontend
