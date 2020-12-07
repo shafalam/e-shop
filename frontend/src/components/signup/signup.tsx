@@ -1,6 +1,9 @@
 import React, { FormEvent } from "react";
 import styles from "./signup.module.css";
 
+import axiosInstance from "../../axios-instance";
+import { useHistory } from "react-router-dom";
+
 enum PaymentMethod {
   "Debit Card",
   "Credit Card",
@@ -22,9 +25,23 @@ const SignUp = () => {
     balance: 0,
   });
 
+  const history = useHistory();
+
   const onFormSubmit = (e: FormEvent<HTMLElement>) => {
     e.preventDefault();
     console.log(e.target);
+    axiosInstance
+      .post("/adduser", {
+        name: formValue.name,
+        email: formValue.email,
+        paymentMethod: formValue.paymentMethod,
+        balance: formValue.balance,
+        password: formValue.password,
+      })
+      .then((response) => {
+        console.log("response: ", response);
+        history.push("/", response.data);
+      });
   };
 
   const onChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {

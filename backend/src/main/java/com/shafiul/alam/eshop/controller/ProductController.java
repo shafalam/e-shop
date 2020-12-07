@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ProductController {
     private ProductCrudService productCrudService;
 
@@ -23,7 +23,7 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/products", method = RequestMethod.GET)
-    public List<Product> getProducts(Model model){
+    public List<Product> getProducts(Model model) {
         List<Product> products = new ArrayList<Product>();
         productCrudService.findAll().forEach(product -> products.add(product));
         return products;
