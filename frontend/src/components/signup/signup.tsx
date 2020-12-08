@@ -4,6 +4,8 @@ import styles from "./signup.module.css";
 import axiosInstance from "../../axios-instance";
 import { useHistory } from "react-router-dom";
 
+export const clientInformationKey = "clientInformation";
+
 enum PaymentMethod {
   "Debit Card",
   "Credit Card",
@@ -40,7 +42,7 @@ const SignUp = () => {
       })
       .then((response) => {
         console.log("response: ", response);
-        history.push("/", response.data);
+        history.push("/", { [clientInformationKey]: response.data });
       });
   };
 
