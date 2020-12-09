@@ -17,7 +17,9 @@ const Home = () => {
   }
 
   const buyClickHandler = () => {
-    history.push("/products");
+    history.push("/products", {
+      customerId: clientDetails.id,
+    });
   };
 
   return (
@@ -30,6 +32,17 @@ const Home = () => {
             You balance is:
             {clientDetails.balance}
           </p>
+          Your Buying history
+          <div>
+            {clientDetails.buyingHistory.map((each) => {
+              return (
+                <div>
+                  <p>Product {each.name}</p>
+                  Price: {each.price}
+                </div>
+              );
+            })}
+          </div>
         </div>
       ) : undefined}
 
