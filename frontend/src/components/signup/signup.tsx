@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 
 export const clientInformationKey = "clientInformation";
 
-enum PaymentMethod {
+export enum PaymentMethod {
   "Debit Card",
   "Credit Card",
   "Bank Transfer",
@@ -18,7 +18,7 @@ const SignUp = () => {
     email: string;
     password: string;
     paymentMethod: PaymentMethod;
-    balance: number;
+    balance: number | undefined;
   }>({
     name: "",
     email: "",
@@ -64,7 +64,11 @@ const SignUp = () => {
   };
 
   const onChangeBalance = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormValue((prev) => ({ ...prev, balance: +e.target.value }));
+    let balanceValue: number | undefined;
+    if (e.target.value) {
+      balanceValue = Number.parseInt(e.target.value);
+    }
+    setFormValue((prev) => ({ ...prev, balance: balanceValue }));
   };
 
   const options = [];
@@ -96,7 +100,7 @@ const SignUp = () => {
         <input
           type="password"
           value={formValue.password}
-          placeholder="password"
+          placeholder="Password"
           onChange={onChangePassword}
         />
         <label>

@@ -39,6 +39,10 @@ public class Customer {
         this.buyingHistory = new ArrayList<Product>();
     }
 
+    public String toString(){
+        return "id: " + id + " email: " + email + " products: " + buyingHistory.toString();
+    }
+
     public Long getId() {
         return id;
     }
@@ -72,7 +76,7 @@ public class Customer {
     }
 
     public Integer getBalance() {
-        return balance;
+        return this.balance;
     }
 
     public void setBalance(Integer balance) {
@@ -80,7 +84,7 @@ public class Customer {
     }
 
     public ArrayList<Product> getBuyingHistory() {
-        return buyingHistory;
+        return this.buyingHistory;
     }
 
     public void setBuyingHistory(ArrayList<Product> buyingHistory) {
@@ -88,7 +92,7 @@ public class Customer {
     }
 
     public void addBuyingHistory(Product product){
-        buyingHistory.add(product);
+        this.buyingHistory.add(product);
     }
 
     public String getPassword() {

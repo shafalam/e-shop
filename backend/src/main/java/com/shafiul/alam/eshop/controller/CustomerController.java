@@ -56,8 +56,11 @@ public class CustomerController {
         System.out.println("Customer's name: " + customer.getName());
         System.out.println("Product's name: " + product.getName());
 
+        System.out.println("customer before buying " + customer);
         customerService.setCustomer(customer);
         customerService.buyProduct(product);
+        System.out.println("customer after buying " + customer);
+        
         return customer;
     }
 
