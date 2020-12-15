@@ -55,17 +55,14 @@ public class CustomerController {
                 .orElseThrow(() -> new IllegalArgumentException("invalid product: " + productId));
         System.out.println("Customer's name: " + customer.getName());
         System.out.println("Product's name: " + product.getName());
-
-        System.out.println("customer before buying " + customer);
         customerService.setCustomer(customer);
         customerService.buyProduct(product);
-        System.out.println("customer after buying " + customer);
-        
+
+        customerCrudService.save(customer);
         return customer;
     }
 
     private boolean findAndMatch(String email, String password) {
-        // Iterable<Customer> iterable = customerCrudService.findAll();
         Iterator<Customer> iterator = customerCrudService.findAll().iterator();
         while (iterator.hasNext()) {
             Customer customer = iterator.next();

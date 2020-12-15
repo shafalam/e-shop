@@ -1,10 +1,8 @@
 package com.shafiul.alam.eshop.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Customer {
@@ -17,7 +15,9 @@ public class Customer {
     private String paymentMethod;
     private Integer balance;
     private String password;
-    private ArrayList<Product> buyingHistory = new ArrayList<Product>();
+
+    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    private List<Product> buyingHistory;
 
     public Customer(){
         this.buyingHistory = new ArrayList<Product>();
@@ -83,7 +83,7 @@ public class Customer {
         this.balance = balance;
     }
 
-    public ArrayList<Product> getBuyingHistory() {
+    public List<Product> getBuyingHistory() {
         return this.buyingHistory;
     }
 
